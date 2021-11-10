@@ -8,10 +8,18 @@ class BaseModel:
     """A class BaseModel
     Attributes"""
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
+
+        ISOformat = "%Y-%m-%dT%H:%M:%S.%f"
         self.id = str(uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
+        if len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "created_at" or key == "update_at":
+                    self.__dict__[key] = datetime.strptime(value, ISOformat)
+                else:
+                    self.__dict__[key] = value
 
     def __str__(self):
 
@@ -29,6 +37,6 @@ class BaseModel:
 
         new = self.__dict__.copy()
         new['__class__'] = self.__class__.__name__
-        new['created_at'] = datetime.isoformat(new['created_ad'])
+        new['created_at'] = datetime.isoformat(new['created_at'])
         new['updated_at'] = datetime.isoformat(new['updated_at'])
         return new
