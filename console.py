@@ -4,20 +4,18 @@ import cmd
 import re
 
 class HBNBCommand(cmd.Cmd):
-    """Define the air bnb command interpreter
-
-    """
+    """Define the air bnb command interpreter."""
     prompt = "(hbnb) "
     def emptyline(self):
-        """Define a function to handle empty line"""
+        """Define a function to handle empty line."""
         pass
 
     def do_quit(self, arg):
-        """Quit command to exit the program."""
+        """Define a function to quit the program."""
         return True
 
     def do_EOF(self, arg):
-        """EOF signal to exit the program."""
+        """Define a function to EOF signal."""
         print("")
         return True
 
