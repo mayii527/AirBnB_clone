@@ -24,7 +24,7 @@ class BaseModel:
 
         self.update_at = datetime.now()
 
-    def to_dict(self)
+    def to_dict(self):
         """returns a dictionary containing all keys/values"""
 
         new = self.__dict__.copy()
