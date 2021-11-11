@@ -2,7 +2,7 @@
 """this module create the class call BaseModel"""
 from datetime import date, datetime
 from uuid import uuid4
-
+import models
 
 class BaseModel:
     """A class BaseModel
@@ -20,6 +20,8 @@ class BaseModel:
                     self.__dict__[key] = datetime.strptime(value, ISOformat)
                 else:
                     self.__dict__[key] = value
+        else:
+            models.storage.new(self)
 
     def __str__(self):
 
