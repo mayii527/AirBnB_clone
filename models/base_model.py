@@ -1,12 +1,20 @@
 #!/usr/bin/python3
-"""this module create the class call BaseModel"""
+""" this module create the class call BaseModel
+This function creates the superclass from which the 
+subclasses that we will be using throughout the 
+project will later inherit"""
+
 import models
 from datetime import datetime
 from uuid import uuid4
 
 class BaseModel:
-    """A class BaseModel
-    Attributes"""
+   """A class BaseModel
+    Attributes
+    Parameters
+    ----------
+    parametro_1 : type: dictionary
+    each attribute is a dictionary key"""
 
     def __init__(self, *args, **kwargs):
 
@@ -40,4 +48,5 @@ class BaseModel:
         new['__class__'] = self.__class__.__name__
         new['created_at'] = datetime.isoformat(new['created_at'])
         new['updated_at'] = datetime.isoformat(new['updated_at'])
+        """ return: type: dictionary"""
         return new
