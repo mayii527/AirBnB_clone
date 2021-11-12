@@ -9,6 +9,7 @@ from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
 
+
 class FileStorage:
     """ Json storage engine """
 
@@ -27,7 +28,8 @@ class FileStorage:
     def save(self):
         """serialize __objects to json file"""
         with open(FileStorage.__file_path, "w") as file:
-            objDict = {key: value.to_dict() for key, value in FileStorage.__objects.items()}
+            objDict = {key: value.to_dict() for key,
+                       value in FileStorage.__objects.items()}
             json.dump(objDict, file)
 
     def reload(self):
@@ -35,7 +37,7 @@ class FileStorage:
         try:
             with open(FileStorage.__file_path, "r", encoding="UTF-8") as file:
                 for key, value in (json.load(file)).items():
-                    value =  eval(value["__class__"])(**value)
+                    value = eval(value["__class__"])(**value)
                     self.__objects[key] = value
         except Exception:
             return
