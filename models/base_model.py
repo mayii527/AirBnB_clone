@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """this module create the class call BaseModel"""
 import models
-from datetime import date, datetime
+from datetime import datetime
 from uuid import uuid4
 
 class BaseModel:
@@ -16,12 +16,12 @@ class BaseModel:
         self.updated_at = datetime.now()
         if len(kwargs) != 0:
             for key, value in kwargs.items():
-                if key == "created_at" or key == "update_at":
+                if key == "created_at" or key == "updated_at":
                     self.__dict__[key] = datetime.strptime(value, ISOformat)
                 else:
                     self.__dict__[key] = value
         else:
-             models.storage.new(self)
+            models.storage.new(self)
 
     def __str__(self):
 
