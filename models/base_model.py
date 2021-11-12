@@ -47,10 +47,10 @@ class BaseModel:
 
     def to_dict(self):
         """returns a dictionary containing all keys/values"""
-
-        new = self.__dict__.copy()
         """ Copy function returns a copy of the dictionary
         without modifying the original """
+        
+        new = self.__dict__.copy()
         new['__class__'] = self.__class__.__name__
         new['created_at'] = datetime.isoformat(new['created_at'])
         new['updated_at'] = datetime.isoformat(new['updated_at'])
