@@ -6,7 +6,9 @@ project will later inherit"""
 
 import models
 from datetime import datetime
+""" this module generate general current date and time"""
 from uuid import uuid4
+""" this module generate a id unique random"""
 
 class BaseModel:
    """A class BaseModel
@@ -45,6 +47,8 @@ class BaseModel:
         """returns a dictionary containing all keys/values"""
 
         new = self.__dict__.copy()
+      """ Copy function returns a copy of the dictionary 
+        without modifying the original """
         new['__class__'] = self.__class__.__name__
         new['created_at'] = datetime.isoformat(new['created_at'])
         new['updated_at'] = datetime.isoformat(new['updated_at'])
