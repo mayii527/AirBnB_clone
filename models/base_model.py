@@ -1,17 +1,18 @@
 #!/usr/bin/python3
 """ this module create the class call BaseModel
-This function creates the superclass from which the 
-subclasses that we will be using throughout the 
+This function creates the superclass from which the
+subclasses that we will be using throughout the
 project will later inherit"""
+""" this module generate general current date and time"""
+""" this module generate a id unique random"""
 
 import models
 from datetime import datetime
-""" this module generate general current date and time"""
 from uuid import uuid4
-""" this module generate a id unique random"""
+
 
 class BaseModel:
-   """A class BaseModel
+    """A class BaseModel
     Attributes
     Parameters
     ----------
@@ -36,7 +37,8 @@ class BaseModel:
     def __str__(self):
 
         """Return a string of the class BaseModel"""
-        return "[{}] ({}) {}".format(self.__class__.__name__,self.id, self.__dict__)
+        return "[{}] ({}) {}".format(self.__class__.__name__,
+                                    self.id, self.__dict__)
 
     def save(self):
         """save update_at with current time."""
@@ -47,7 +49,7 @@ class BaseModel:
         """returns a dictionary containing all keys/values"""
 
         new = self.__dict__.copy()
-      """ Copy function returns a copy of the dictionary 
+        """ Copy function returns a copy of the dictionary
         without modifying the original """
         new['__class__'] = self.__class__.__name__
         new['created_at'] = datetime.isoformat(new['created_at'])
