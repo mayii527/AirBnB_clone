@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """this module create the class Review"""
-from model.base_model import BaseModel
+from models.base_model import BaseModel
 
 class Review(BaseModel):
     """review class with public attributes"""

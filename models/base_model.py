@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """this module create the class call BaseModel"""
+import models
 from datetime import date, datetime
 from uuid import uuid4
-import models
 
 class BaseModel:
     """A class BaseModel
@@ -21,18 +21,17 @@ class BaseModel:
                 else:
                     self.__dict__[key] = value
         else:
-            models.storage.new(self)
+             models.storage.new(self)
 
     def __str__(self):
 
         """Return a string of the class BaseModel"""
-        return "[{}] ({}) {}".format(self.__class__.__name__,
-                                        self.id, self.__dict__)
+        return "[{}] ({}) {}".format(self.__class__.__name__,self.id, self.__dict__)
 
     def save(self):
-        """updates the public instance attribute"""
-
-        self.update_at = datetime.now()
+        """save update_at with current time."""
+        self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """returns a dictionary containing all keys/values"""
