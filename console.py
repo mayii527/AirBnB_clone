@@ -17,7 +17,7 @@ import re
 class HBNBCommand(cmd.Cmd):
     """Define the air bnb command interpreter."""
 
-    prompt = "(Sexo) "
+    prompt = "(hbnb ) "
 
     __classes = [
         "BaseModel", "User", "State",
