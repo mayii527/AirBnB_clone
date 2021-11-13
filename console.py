@@ -80,6 +80,25 @@ class HBNBCommand(cmd.Cmd):
             del object_dict["{}.{}".format(arg_parse[0], arg_parse[1])]
             storage.save()
 
+    def do_all(self, arg):
+        """Print all instances"""
+        arg_parse = shlex.split(arg)
+        if len(arg) == 0:
+            obj_list = []
+            models.storage.reload()
+            for index, objects in models.storage.all().items():
+                obj_list.append(objects.__str__())
+            print(obj_list)
+        elif arg_parse[0] not in HBNBCommand.__classes:
+            print("** class doesn't exist **")
+        else:
+            obj_list = []
+            models.storage.reload()
+            for index, objects in models.storage.all().items():
+                if objects.__class__.__name__ == arg_parse[0]:
+                    obj_list.append(objects.__str__())
+                print(obj_list)
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
