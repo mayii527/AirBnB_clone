@@ -28,16 +28,18 @@ class FileStorage:
     def save(self):
         """serialize __objects to json file"""
         with open(FileStorage.__file_path, "w") as file:
-            objDict = {key: value.to_dict() for key,
-                       value in FileStorage.__objects.items()}
-            json.dump(objDict, file)
+            dictionary = {key: value.to_dict() for key,
+                          value in FileStorage.__objects.items()}
+            json.dump(dictionary, file)
 
     def reload(self):
-        "deserialize the JSON file"
+        """deserialize"""
         try:
             with open(FileStorage.__file_path, "r", encoding="UTF-8") as file:
-                for key, value in (json.load(file)).items():
-                    value = eval(value["__class__"])(**value)
-                    self.__objects[key] = value
+                dictionary = json.load(file)
+                for objects in dictionary.values():
+                    class_name = objects["__class__"]
+                    del objects["__class__"]
+                    self.new(eval(class_name)(**objects))
         except Exception:
             return

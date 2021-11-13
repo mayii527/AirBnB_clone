@@ -4,15 +4,12 @@ import uuid
 from datetime import datetime
 
 
-ISOformat = "%Y-%m-%dT%H:%M:%S.%f"
-
-
 class BaseModel:
     """BaseModel Class"""
-
     def __init__(self, *args, **kwargs):
         """init a instance of BaseModel"""
-        if kwargs and kwargs != {}:
+        ISOformat = "%Y-%m-%dT%H:%M:%S.%f"
+        if len(kwargs) != 0:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
                     self.__dict__[key] = datetime.strptime(value, ISOformat)
