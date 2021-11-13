@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""this module tests the cases of BaseModel"""
+"""this module tests the cases of Amenity class"""
 
 from models.amenity import Amenity
 from datetime import datetime
