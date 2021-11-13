@@ -6,6 +6,7 @@ from datetime import datetime
 from uuid import uuid4
 import unittest
 
+
 class TestBaseModel(unittest.TestCase):
     """"dsfsfsdf"""
     def setUp(self):
@@ -39,5 +40,6 @@ class TestBaseModel(unittest.TestCase):
         """test str"""
         self.assertEqual(type(str(self.Model)), str)
 
+
 if __name__ == "__main__":
-        unittest.main()
+    unittest.main()

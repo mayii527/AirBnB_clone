@@ -50,5 +50,6 @@ class TestCity(unittest.TestCase):
         self.assertEqual(type(self.Citys.state_id), str)
         self.assertTrue(hasattr(self.Citys, "state_id"))
 
+
 if __name__ == "__main__":
-        unittest.main()
+    unittest.main()

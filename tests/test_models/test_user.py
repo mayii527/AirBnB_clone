@@ -5,6 +5,7 @@ from models.user import User
 from datetime import datetime
 import unittest
 
+
 class TestUser(unittest.TestCase):
     """"test for clas User"""
 
@@ -57,5 +58,6 @@ class TestUser(unittest.TestCase):
         """test of first_name in User"""
         pass
 
+
 if __name__ == "__main__":
-        unittest.main()
+    unittest.main()
