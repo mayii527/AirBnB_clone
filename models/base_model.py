@@ -6,9 +6,13 @@ from datetime import datetime
 
 
 class BaseModel:
-    """BaseModel Class"""
+    """BaseModel Class, define common
+    attribute for the other"""
+
     def __init__(self, *args, **kwargs):
-        """init a instance of BaseModel"""
+        """init a instance of BaseModel,
+        *args dont be use"""
+
         ISOformat = "%Y-%m-%dT%H:%M:%S.%f"
         if len(kwargs) != 0:
             for key, value in kwargs.items():
