@@ -33,7 +33,7 @@ class TestBaseModel(unittest.TestCase):
     def test_Model_update(self):
         """test update_at for BaseModel"""
         self.assertEqual(type(self.Model.updated_at), type(datetime.now()))
-        self.assertTrue(hasattr(self.Model, "update_at"))
+        self.assertFalse(hasattr(self.Model, "update_at"))
 
     def test_method_str(self):
         """test str"""
