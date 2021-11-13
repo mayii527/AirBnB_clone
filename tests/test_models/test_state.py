@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""this module tests the cases of BaseModel"""
+"""this module tests the cases of state class"""
 
 from models.state import State
 from datetime import datetime
