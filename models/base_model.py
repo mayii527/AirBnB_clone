@@ -28,7 +28,7 @@ class BaseModel:
 
     def __str__(self):
         """Return a string of the class BaseModel"""
-        return "[{}]({}) {}".\
+        return "[{}] ({}) {}".\
             format(self.__class__.__name__, self.id, self.__dict__)
 
     def save(self):
