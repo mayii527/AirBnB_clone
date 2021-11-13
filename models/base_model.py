@@ -14,7 +14,7 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         """init a instance of BaseModel"""
-        if kwargs and len(kwargs) != 0:
+        if kwargs and kwargs != {}:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
                     self.__dict__[key] = datetime.strptime(value, ISOformat)
