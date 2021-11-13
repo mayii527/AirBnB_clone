@@ -5,10 +5,24 @@ from models.base_model import BaseModel
 from datetime import datetime
 from uuid import uuid4
 import unittest
+import os
+import models
 
 
 class TestBaseModel(unittest.TestCase):
-    """"dsfsfsdf"""
+    """"Tests cases"""
+    def set_up(self):
+        """creating object of BaseModel."""
+        self.object = BaseModel()
+        self.object1 = BaseModel()
+
+    def tear_down(self):
+        """Test teardown."""
+        del self.object
+        del self.object1
+        if os.path.exists("file.json"):
+            os.remove()
+
     def setUp(self):
         """creating object of BaseModel"""
         self.Model = BaseModel()

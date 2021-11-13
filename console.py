@@ -99,6 +99,11 @@ class HBNBCommand(cmd.Cmd):
                     obj_list.append(objects.__str__())
                 print(obj_list)
 
-
+    def do_update(self, arg):
+        """Update a class instance with a id"""
+        arg_parse = shlex.split(arg)
+        if len(arg_parse) == 0:
+            print("** class name missing **")
+            return False
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
