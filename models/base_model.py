@@ -6,13 +6,15 @@ from datetime import datetime
 import uuid
 
 
+ISOformat = "%Y-%m-%dT%H:%M:%S.%f"
+
+
 class BaseModel:
     """BaseModel Class"""
 
     def __init__(self, *args, **kwargs):
         """init a instance of BaseModel"""
-        ISOformat = "%Y-%m-%dT%H:%M:%S.%f"
-        if len(kwargs) != 0:
+        if kwargs and len(kwargs) != 0:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
                     self.__dict__[key] = datetime.strptime(value, ISOformat)
@@ -38,6 +40,6 @@ class BaseModel:
         """returns a dictionary containing all keys/values"""
         new = self.__dict__.copy()
         new['__class__'] = self.__class__.__name__
-        new['created_at'] = datetime.isoformat(new['created_at'])
-        new['updated_at'] = datetime.isoformat(new['updated_at'])
+        new['created_at'] = new["created_at"].isoformat()
+        new['updated_at'] = new["updated_at"].isoformat()
         return new
