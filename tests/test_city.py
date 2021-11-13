@@ -2,15 +2,15 @@
 """this module tests the cases of BaseModel"""
 
 from models.city import City
-from models.base_model import BaseModel
 from datetime import datetime
-from uuid import uuid4
 import unittest
+
 
 class TestCity(unittest.TestCase):
     """"test city"""
+
     def setUp(self):
-        """creating object of BaseModel"""
+        """creating object of City"""
         self.Citys = City()
 
     def exist_City(self):
