@@ -14,10 +14,11 @@ from models.review import Review
 from models import storage
 import re
 
+
 class HBNBCommand(cmd.Cmd):
     """Define the air bnb command interpreter."""
 
-    prompt = "(hbnb ) "
+    prompt = "(hbnb) "
 
     __classes = [
         "BaseModel", "User", "State",
@@ -50,7 +51,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, arg):
         """Print a string with the class representation"""
-        object_dictionary = storage.all()
+        object_dict = storage.all()
         arg_parse = shlex.split(arg)
         if len(arg_parse) == 0:
             print("** class name missing **")
@@ -58,14 +59,14 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         elif len(arg_parse) == 1:
             print("** instance id missing **")
-        elif "{}.{}".format(arg_parse[0], arg_parse[1]) not in object_dictionary:
+        elif "{}.{}".format(arg_parse[0], arg_parse[1]) not in object_dict:
             print("** no instance found **")
         else:
-            print(object_dictionary["{}.{}".format(arg_parse[0], arg_parse[1])])
+            print(object_dict["{}.{}".format(arg_parse[0], arg_parse[1])])
 
     def do_destroy(self, arg):
         """Destroy a class instance"""
-        object_dictionary = storage.all()
+        object_dict = storage.all()
         arg_parse = shlex.split(arg)
         if len(arg_parse) == 0:
             print("** class name missing **")
@@ -73,10 +74,10 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         elif len(arg_parse) == 1:
             print("** instance id missing **")
-        elif "{}.{}".format(arg_parse[0], arg_parse[1]) not in object_dictionary:
+        elif "{}.{}".format(arg_parse[0], arg_parse[1]) not in object_dict:
             print("** no instance found **")
         else:
-            del object_dictionary["{}.{}".format(arg_parse[0], arg_parse[1])]
+            del object_dict["{}.{}".format(arg_parse[0], arg_parse[1])]
             storage.save()
 
 
