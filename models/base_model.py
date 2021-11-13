@@ -26,6 +26,11 @@ class BaseModel:
             self.updated_at = datetime.now()
             models.storage.new(self)
 
+    def __str__(self):
+        """Return a string of the class BaseModel"""
+        return "[{}] ({}) {}".\
+            format(self.__class__.__name__, self.id, self.__dict__)
+
     def save(self):
         """save update_at with current time."""
         self.updated_at = datetime.now()
@@ -38,8 +43,3 @@ class BaseModel:
         new['created_at'] = new["created_at"].isoformat()
         new['updated_at'] = new["updated_at"].isoformat()
         return new
-
-    def __str__(self):
-        """Return a string of the class BaseModel"""
-        return "[{}] ({}) {}".\
-            format(self.__class__.__name__, self.id, self.__dict__)
