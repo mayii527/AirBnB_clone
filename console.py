@@ -70,7 +70,7 @@ class HBNBCommand(cmd.Cmd):
         arg_parse = shlex.split(arg)
         if len(arg_parse) == 0:
             print("** class name missing **")
-        elif arg_parse[0] not in HBNBCommand.__classes:
+        if arg_parse[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
         elif len(arg_parse) == 1:
             print("** instance id missing **")
@@ -105,5 +105,32 @@ class HBNBCommand(cmd.Cmd):
         if len(arg_parse) == 0:
             print("** class name missing **")
             return False
+        if arg_parse[0] not in HBNBCommand.__classes:
+            print("** class doesn't exist **")
+            return False
+        if len(arg_parse) == 1:
+            print("** instance id missing **")
+            return False
+        else:
+            models.storage.reload()
+            object_dict = models.storage.all()
+            for index, objects in object_dict.items():
+                if objects.id == arg_parse[1] and objects.__class__.__name__ == arg_parse[0]:
+                    if len(arg_parse) == 2:
+                        print("** attribute name missing **")
+                        return False
+                    elif len(arg_parse) == 3:
+                        print("** value missing **")
+                        return False
+                    else:
+                        new_attribute = arg_parse[3]
+                        if hasattr(objects, str(arg_parse[2])):
+                            new_attribute = type(objects.__class__.__dict__[arg_parsel[2]])
+                        objects.__dict__[arg_parse[2]] = new_attribute
+                        models.storage.save()
+                        return
+            print("** no instance found **")
+
+
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
