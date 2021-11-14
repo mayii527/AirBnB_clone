@@ -9,21 +9,17 @@ import unittest
 class TestAmenity(unittest.TestCase):
     """"test Amenity"""
 
-
     def setUp(self):
         """creating object of Amenity"""
         self.Amenity = Amenity()
-
 
     def exist_Amenity(self):
         """test of exist the class Amenity"""
         self.assertEqual('[Amenity]' in str(self.Amenity), True)
 
-
     def test_type(self):
         """test type of Amenity"""
         self.assertEqual(type(self.Amenity), Amenity)
-
 
     def test_Amenity_id(self):
         """test id for Amenity"""

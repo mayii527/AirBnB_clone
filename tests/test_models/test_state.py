@@ -9,21 +9,17 @@ import unittest
 class TestState(unittest.TestCase):
     """"test state"""
 
-
     def setUp(self):
         """creating object of State"""
         self.State = State()
-
 
     def exist_State(self):
         """test of exist the class State"""
         self.assertEqual('[State]' in str(self.State), True)
 
-
     def test_type(self):
         """test type of State"""
         self.assertEqual(type(self.State), State)
-
 
     def test_State_id(self):
         """test id for State"""
@@ -51,4 +47,3 @@ class TestState(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
