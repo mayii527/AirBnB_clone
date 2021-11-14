@@ -57,6 +57,10 @@ class TestState(unittest.TestCase):
         """test if update_at type str"""
         self.assertEqual('update_at' in str(self.State), False)
 
+    def test_strmethod_classname(self):
+        '''Tests if class name in str'''
+        self.assertEqual('[State]' in str(self.State), True)
+
     def test_str_output(self):
         '''Tests for output expected'''
         output = "[{}] ({}) {}".format(
