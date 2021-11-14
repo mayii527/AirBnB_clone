@@ -115,7 +115,8 @@ class HBNBCommand(cmd.Cmd):
             models.storage.reload()
             object_dict = models.storage.all()
             for index, objects in object_dict.items():
-                if objects.id == arg_parse[1] and objects.__class__.__name__ == arg_parse[0]:
+                if objects.id == arg_parse[1] and \
+                        objects.__class__.__name__ == arg_parse[0]:
                     if len(arg_parse) == 2:
                         print("** attribute name missing **")
                         return False
@@ -125,7 +126,8 @@ class HBNBCommand(cmd.Cmd):
                     else:
                         new_attribute = arg_parse[3]
                         if hasattr(objects, str(arg_parse[2])):
-                            new_attribute = type(objects.__class__.__dict__[arg_parsel[2]])
+                            new_attribute = \
+                                type(objects.__class__.__dict__[arg_parsel[2]])
                         objects.__dict__[arg_parse[2]] = new_attribute
                         models.storage.save()
                         return
