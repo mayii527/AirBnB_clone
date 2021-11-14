@@ -55,5 +55,26 @@ class TestReview(unittest.TestCase):
         self.assertEqual(type(self.reviews.text), str)
         self.assertTrue(hasattr(self.reviews, "text"))
 
+    def test_strmethod_id(self):
+        '''Tests if id is type str'''
+        self.assertEqual('id' in str(self.reviews), True)
+
+    def test_strmethod_created(self):
+        """test if created_at type str"""
+        self.assertEqual('created_at' in str(self.reviews), True)
+
+    def test_srtmethod_update(self):
+        """test if update_at type str"""
+        self.assertEqual('update_at' in str(self.reviews), False)
+
+    def test_str_output(self):
+        '''Tests for output expected'''
+        output = "[{}] ({}) {}".format(
+            self.reviews._class.name_,
+            self.reviews.id,
+            self.reviews._dict_
+        )
+        self.assertEqual(output, str(self.reviews))
+
 if __name__ == "__main__":
     unittest.main()
