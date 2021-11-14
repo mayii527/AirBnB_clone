@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""this module tests the cases of BaseModel"""
-
+"""this module tests the cases of City"""
 from models.city import City
 from datetime import datetime
 import unittest
@@ -50,6 +49,26 @@ class TestCity(unittest.TestCase):
         self.assertEqual(type(self.Citys.state_id), str)
         self.assertTrue(hasattr(self.Citys, "state_id"))
 
+    def test_strmethod_id(self):
+        '''Tests if id is type str'''
+        self.assertEqual('id' in str(self.Citys), True)
+
+    def test_strmethod_created(self):
+        """test if created_at type str"""
+        self.assertEqual('created_at' in str(self.Citys), True)
+
+    def test_srtmethod_update(self):
+        """test if update_at type str"""
+        self.assertEqual('update_at' in str(self.Citys), False)
+
+    def test_str_output(self):
+        '''Tests for output expected'''
+        output = "[{}] ({}) {}".format(
+            self.Citys.__class__.__name__,
+            self.Citys.id,
+            self.Citys.__dict__
+        )
+        self.assertEqual(output, str(self.Citys))
 
 if __name__ == "__main__":
     unittest.main()
