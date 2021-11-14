@@ -94,6 +94,6 @@ class TestPlace(unittest.TestCase):
         """test amenity_ids in Place"""
         self.assertEqual(type(self.places.amenity_ids), list)
         self.assertTrue(hasattr(self.places, "amenity_ids"))
-    
+
 if __name__ == "__main__":
     unittest.main()
