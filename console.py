@@ -115,7 +115,8 @@ class HBNBCommand(cmd.Cmd):
             models.storage.reload()
             object_dict = models.storage.all()
             for index, objects in object_dict.items():
-                if objects.id == arg_parse[1] and objects.__class__.__name__ == arg_parse[0]:
+                if objects.id == arg_parse[1] and \
+                        objects.__class__.__name__ == arg_parse[0]:
                     if len(arg_parse) == 2:
                         print("** attribute name missing **")
                         return False
