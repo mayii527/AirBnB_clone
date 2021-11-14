@@ -133,6 +133,17 @@ class HBNBCommand(cmd.Cmd):
                         return
             print("** no instance found **")
 
+    def do_count(self, arg):
+        """count the instances of a class"""
+        arg_parse = shlex.split(arg)
+        aux = 0
+        if not arg:
+            return
+        for objects in storage.all().values():
+            if arg_parse[0] == objects.__class__.__name__:
+                aux += 1
+        print(aux)
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
