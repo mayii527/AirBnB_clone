@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""this module tests the cases of BaseModel"""
+"""this module tests the cases of user class"""
 
 from models.user import User
 from datetime import datetime
@@ -58,6 +58,26 @@ class TestUser(unittest.TestCase):
         """test of first_name in User"""
         pass
 
+    def test_strmethod_id(self):
+        '''Tests if id is type str'''
+        self.assertEqual('id' in str(self.users), True)
+
+    def test_strmethod_created(self):
+        """test if created_at type str"""
+        self.assertEqual('created_at' in str(self.users), True)
+
+    def test_srtmethod_update(self):
+        """test if update_at type str"""
+        self.assertEqual('update_at' in str(self.users), False)
+
+    def test_str_output(self):
+        '''Tests for output expected'''
+        output = "[{}] ({}) {}".format(
+            self.users._class.name_,
+            self.users.id,
+            self.users._dict_
+        )
+        self.assertEqual(output, str(self.users))
 
 if __name__ == "__main__":
     unittest.main()
