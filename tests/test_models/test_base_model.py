@@ -73,6 +73,22 @@ class TestBaseModel(unittest.TestCase):
         second_date = test_object.updated_at
         self.assertNotEqual(first_date, second_date)
 
+    def test_to_dict(self):
+        """Check if dic works"""
+        test_object = BaseModel()
+        test_dict = test_object.to_dict()
+        self.assertIsInstance(test_dict, dict)
+        for key, value in test_dict.items():
+            aux = 0
+            if test_dict["__class__"] == "BaseModel":
+                aux += 1
+            self.assertTrue(aux == 1)
+        for key, value in test_dict.items():
+            if key == "created_at":
+                self.assertIsInstance(value, str)
+            if key == "updated_at":
+                self.assertIsInstance(value, str)
+
 
 if __name__ == "__main__":
     unittest.main()
