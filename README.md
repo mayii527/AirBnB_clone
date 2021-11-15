@@ -25,7 +25,7 @@ This will help you to create your first web application: AirBnB clone.
 
 ---
 
-###Resources.
+#Resources.
 
 **Read or warch:**
 
@@ -43,7 +43,7 @@ This will help you to create your first web application: AirBnB clone.
 
 - [Python test cheatsheet](https://www.pythonsheets.com/notes/python-tests.html)
 
-###General.
+#General.
 
 - How to create a Python package.
 - How to create a command interpreter in Python using the `cmd` module.
@@ -102,7 +102,7 @@ All tests should also pass in non-interactive mode: ```$ echo "python3 -m unitte
 [HBNB- Project overview.](https://youtu.be/E12Xc3H2xqo)
 ![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20211115%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20211115T170438Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=4132ab26fc3557a2bb713e4e14b3a756be33bbda04b15c624db40dfa79f5f017)
 
-##Authors.
+#Authors.
 
 - [Andres Zapata.](https://github.com/andresdiaz10)
 - [Laura Alejandra C.](https://github.com/LauraAlejandra2021)
