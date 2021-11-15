@@ -35,19 +35,35 @@ ________________________________________________
 <h3>
 This class contains the following methods:
 <h3>
+
+
 *__init__: method that constructor that initializes the class
 
 *save: method that contains an attribute called update_at that saves it with the current time.
 
 *to_dict: method that creates a copy of the original without changing the original
 
+
 <h2>
 More classes
 <h2>
 ________________________________________________
-<h3>
+
 Within the scope of this stage is the creation of several classes to which methods other than those inherited from the base class model have not yet been defined. these classes are:
 
 Class Amenity, Class City, Class Place, City Review, Class State, Class User.  
 
-  
+<h2>
+Console
+<h2>
+________________________________________
+
+A console created in python is implemented, which allows to create and retrieve objects, through a storage engine, next to mention.
+
+<h2>
+Engine
+<h2>
+________________________________________
+file_storage. In this module the serialization is produced by passing a python object to JSON, and also the deserialization by passing from JSON to a python object.
+
+Inside engine we find filepath which is the one in charge of storing the objects that we want to export, and we also find object which is where what arrives in JSON in dictionary format are saved.
