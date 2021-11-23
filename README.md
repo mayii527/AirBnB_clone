@@ -25,7 +25,7 @@ This will help you to create your first web application: AirBnB clone.
 
 ---
 
-### Resources.
+## Resources.
 
 **Read or warch:**
 
@@ -43,7 +43,7 @@ This will help you to create your first web application: AirBnB clone.
 
 - [Python test cheatsheet](https://www.pythonsheets.com/notes/python-tests.html)
 
-### General.
+## General.
 
 - How to create a Python package.
 - How to create a command interpreter in Python using the `cmd` module.
@@ -56,7 +56,7 @@ This will help you to create your first web application: AirBnB clone.
 - What is `**kwargs` and how to use it.
 - How to handle named arguments in a function.
 
-### Execution.
+## Execution.
 
 Your shell should work like this in interactive mode:
 
@@ -101,7 +101,35 @@ All tests should also pass in non-interactive mode: ```$ echo "python3 -m unitte
 
 [HBNB- Project overview.](https://youtu.be/E12Xc3H2xqo)
 
-### Authors.
+## Web static.
+
+Now that you have a command interpreter for managing your AirBnB objects, it’s time to make them alive!
+Before developing a big and complex web application, we will build the front end step-by-step.
+
+The first step is to “design” / “sketch” / “prototype” each element:
+
+- Create simple HTML static pages
+- Style guide
+- Fake contents
+- No Javascript
+- No data loaded from anything
+    
+It will manipulate the HTML and CSS languages. HTML is the structure of your page, it should be the first thing you should write. CSS is the style of your page, the layout. I really encourage you to fix your HTML part before you start styling. In fact, without any structure, no design can be applied.
+
+## Resources.
+
+- [Learn to Code HTML & CSS](https://learn.shayhowe.com/html-css/) (until “Creating Lists” included)
+- [Inline Styles in HTML](https://www.codecademy.com/articles/html-inline-styles)
+- [Specifics on CSS Specificity](https://css-tricks.com/specifics-on-css-specificity/)
+- [CSS SpeciFishity](http://www.standardista.com/wp-content/uploads/2012/01/specificity3.pdf)
+- [Introduction to HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML)
+- [CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS)
+- [MDN](https://developer.mozilla.org/en-US/)
+- [center boxes](https://css-tricks.com/centering-css-complete-guide/)
+
+---
+
+# Authors.
 
 - [Andres Zapata.](https://github.com/andresdiaz10)
 - [Laura Alejandra C.](https://github.com/LauraAlejandra2021)
